@@ -1,0 +1,89 @@
+@baseUrl = http://localhost:4004/odata/v4/university
+
+### GET all Departments
+GET {{baseUrl}}/Departments
+
+### GET all Professors
+GET {{baseUrl}}/Professors
+
+### GET all Courses
+GET {{baseUrl}}/Courses
+
+### GET all Students
+GET {{baseUrl}}/Students
+
+### GET all Enrollments
+GET {{baseUrl}}/Enrollments
+
+### GET all Exams
+GET {{baseUrl}}/Exams
+
+### GET courses filtered by department and semester
+GET {{baseUrl}}/Courses?$filter=department_code eq 'CS' and semester eq 5
+
+### GET students with CGPA above 8.0
+GET {{baseUrl}}/Students?$filter=cgpa gt 8
+
+### GET available courses (currentEnrolled < maxStudents)
+GET {{baseUrl}}/Courses?$filter=currentEnrolled lt maxStudents
+
+### GET enrollments for a specific student
+GET {{baseUrl}}/Enrollments?$filter=student_ID eq aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+
+### POST new student
+
+POST {{baseUrl}}/Students
+Content-Type: application/json
+
+{
+    "rollNumber":"CS2026999",
+    "firstName":"Karan",
+    "lastName":"Patel",
+    "email":"karan@gmail.com",
+    "phone":"9877009999",
+    "dateOfBirth":"2003-05-10",
+    "admissionYear":2026,
+    "currentSemester":1,
+    "cgpa":0,
+    "department_code":"CS",
+    "isActive":true
+}
+
+### POST new enrollment
+
+POST {{baseUrl}}/Enrollments
+Content-Type: application/json
+
+{
+  "student": {
+    "ID": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+  },
+  "course": {
+    "code": "CS302"
+  },
+  "enrollmentDate": "2026-06-01",
+  "status": "Enrolled",
+  "attendancePercent": 0
+}
+
+### PATCH enrollment grade
+
+PATCH {{baseUrl}}/Enrollments(student_ID='ffffffff-ffff-ffff-ffff-ffffffffffff',course_code='CS302')
+Content-Type: application/json
+
+{
+    "grade":"A",
+    "gradePoints":9.5
+}
+
+### GET courses sorted by title
+
+GET {{baseUrl}}/Courses?$orderby=title
+
+### GET top 3 students
+
+GET {{baseUrl}}/Students?$top=3
+
+### GET selected course fields
+
+GET {{baseUrl}}/Courses?$select=code,title,credits
