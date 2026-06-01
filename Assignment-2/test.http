@@ -37,8 +37,8 @@ Content-Type: application/json
 
 {
     "rollNumber":"CS2026999",
-    "firstName":"Karan",
-    "lastName":"Patel",
+    "firstName":"New Student",
+    "lastName":"Added again",
     "email":"karan@gmail.com",
     "phone":"9877009999",
     "dateOfBirth":"2003-05-10",
