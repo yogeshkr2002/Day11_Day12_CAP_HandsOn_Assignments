@@ -1,0 +1,73 @@
+### 1. All entities check
+GET http://localhost:4004/hr/Departments
+###
+GET http://localhost:4004/hr/Employees
+###
+GET http://localhost:4004/hr/Projects
+###
+GET http://localhost:4004/hr/Skills
+###
+GET http://localhost:4004/hr/Assignments
+###
+GET http://localhost:4004/hr/EmployeeSkills
+
+### 2. Create a Department
+POST http://localhost:4004/hr/Departments
+Content-Type: application/json
+
+{
+  "deptName": "Engineering",
+  "description": "Software Engineering",
+  "budget": 500000.00,
+  "location": "Bangalore"
+}
+
+### 3. Create an Employee linked to a Department
+POST http://localhost:4004/hr/Employees
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@company.com",
+  "jobTitle": "Developer",
+  "hireDate": "2024-01-01",
+  "salary": 75000.00,
+  "isActive": true,
+  "department_ID": "<paste-department-ID-here>"
+}
+
+### 4. Create a Project
+POST http://localhost:4004/hr/Projects
+Content-Type: application/json
+
+{
+  "projectName": "HR System",
+  "startDate": "2026-01-01",
+  "endDate": "2026-12-31",
+  "budget": 200000.00,
+  "status": "Active"
+}
+
+### 5. Assign Employee to Project
+POST http://localhost:4004/hr/Assignments
+Content-Type: application/json
+
+{
+  "employee_ID": "<paste-employee-ID-here>",
+  "project_ID": "<paste-project-ID-here>",
+  "role": "Developer",
+  "allocation": 100,
+  "startDate": "2026-01-01",
+  "endDate": "2026-12-31"
+}
+
+### 6. $expand check
+GET http://localhost:4004/hr/Employees?$expand=department,assignments
+
+### 7. Views check
+GET http://localhost:4004/hr/TeamOverview
+###
+GET http://localhost:4004/hr/ProjectDashboard
+###
+GET http://localhost:4004/hr/SkillsMatrix

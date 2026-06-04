@@ -1,0 +1,5 @@
+ID;deptName;description;budget;currency_code;location
+d1a00001-0000-0000-0000-000000000001;Engineering;Software Development & IT;500000.00;USD;Building A - Floor 3
+d1a00001-0000-0000-0000-000000000002;Human Resources;People Operations;200000.00;USD;Building A - Floor 1
+d1a00001-0000-0000-0000-000000000003;Marketing;Brand & Growth;350000.00;USD;Building B - Floor 2
+d1a00001-0000-0000-0000-000000000004;Finance;Accounting & Planning;250000.00;USD;Building A - Floor 2

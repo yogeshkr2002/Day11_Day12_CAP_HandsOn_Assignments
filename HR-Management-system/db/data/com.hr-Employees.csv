@@ -1,0 +1,6 @@
+ID;firstName;lastName;email;phone;hireDate;salary;currency_code;jobTitle;isActive;department_ID
+e1a00001-0000-0000-0000-000000000001;Sarah;Johnson;sarah.johnson@company.com;+1-555-0101;2020-03-15;95000.00;USD;Engineering Manager;true;d1a00001-0000-0000-0000-000000000001
+e1a00001-0000-0000-0000-000000000002;Mike;Chen;mike.chen@company.com;+1-555-0102;2021-07-01;82000.00;USD;Senior Developer;true;d1a00001-0000-0000-0000-000000000001
+e1a00001-0000-0000-0000-000000000003;Lisa;Park;lisa.park@company.com;+1-555-0103;2022-01-10;75000.00;USD;Developer;true;d1a00001-0000-0000-0000-000000000001
+e1a00001-0000-0000-0000-000000000004;James;Wilson;james.wilson@company.com;+1-555-0104;2019-11-20;88000.00;USD;HR Director;true;d1a00001-0000-0000-0000-000000000002
+e1a00001-0000-0000-0000-000000000005;Anna;Schmidt;anna.schmidt@company.com;+1-555-0105;2023-03-01;70000.00;USD;Marketing Specialist;true;d1a00001-0000-0000-0000-000000000003

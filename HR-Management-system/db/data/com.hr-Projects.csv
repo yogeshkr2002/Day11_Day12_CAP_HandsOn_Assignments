@@ -1,0 +1,4 @@
+ID;projectName;description;startDate;endDate;budget;currency_code;status;manager_ID
+p1a00001-0000-0000-0000-000000000001;ERP Migration;Migrate legacy ERP to SAP S/4HANA;2026-01-01;2026-12-31;200000.00;USD;Active;e1a00001-0000-0000-0000-000000000001
+p1a00001-0000-0000-0000-000000000002;Mobile App v2;Redesign customer mobile application;2026-03-01;2026-08-31;150000.00;USD;Planning;e1a00001-0000-0000-0000-000000000002
+p1a00001-0000-0000-0000-000000000003;Brand Refresh;Update company branding and website;2026-02-15;2026-06-30;80000.00;USD;Active;e1a00001-0000-0000-0000-000000000005

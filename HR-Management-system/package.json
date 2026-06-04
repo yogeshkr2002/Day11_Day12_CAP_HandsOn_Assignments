@@ -1,0 +1,25 @@
+{
+  "name": "HR-Management-system",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": "db",
+        "credentials": {
+          "database": "db/hr.db"
+        }
+      }
+    }
+  }
+}
