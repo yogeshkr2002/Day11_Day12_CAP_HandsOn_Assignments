@@ -1,0 +1,97 @@
+### 1. Service Index
+GET http://localhost:4004
+
+###
+
+### 2. All Books
+GET http://localhost:4004/catalog/Books
+
+###
+
+### 3. Single Book
+GET http://localhost:4004/catalog/Books(b1000001-0000-0000-0000-000000000001)
+
+###
+
+### 4. All Authors
+GET http://localhost:4004/catalog/Authors
+
+###
+
+### 5. Books with Author
+GET http://localhost:4004/catalog/Books?$expand=author
+
+###
+
+### 6. Authors with Books
+GET http://localhost:4004/catalog/Authors?$expand=books
+
+###
+
+### 7. Filter by Genre
+GET http://localhost:4004/catalog/Books?$filter=genre eq 'Fantasy'
+
+###
+
+### 8. Sort by Price
+GET http://localhost:4004/catalog/Books?$orderby=price desc
+
+###
+
+### 9. Top 3 Books
+GET http://localhost:4004/catalog/Books?$top=3
+
+###
+
+### 10. Metadata
+GET http://localhost:4004/catalog/$metadata
+
+### 11. Select Author Name and Email 
+GET http://localhost:4004/catalog/Authors?$select=name,email
+
+
+### 12. Create New Book
+POST http://localhost:4004/catalog/Books
+Content-Type: application/json
+
+{
+  "title": "New Book",
+  "price": 15.99
+}
+
+### Create a new author (should work in admin!)
+POST http://localhost:4004/admin/Authors
+Content-Type: application/json
+
+{
+  "name": "Dan Brown",
+  "country": "United States",
+  "email": "dan@example.com"
+}
+
+### Create a book for the new author
+POST http://localhost:4004/admin/Books
+Content-Type: application/json
+
+{
+  "title": "The Da Vinci Code",
+  "genre": "Thriller",
+  "price": 14.99,
+  "stock": 100,
+  "rating": 4.2,
+  "isbn": "9780307474278",
+  "author_ID": "<paste-the-new-author-ID-here>"
+}
+
+
+### 13. Create a Review for a Book
+POST http://localhost:4004/catalog/Reviews
+Content-Type: application/json
+
+{
+  "book_ID": "b1000001-0000-0000-0000-000000000001",
+  "reviewer": "Yogesh",
+  "rating": 5,
+  "comment": "Excellent Book",
+  "reviewDate": "2026-06-04"
+}
