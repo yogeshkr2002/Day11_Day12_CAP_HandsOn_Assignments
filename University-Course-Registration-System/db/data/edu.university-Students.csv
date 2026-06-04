@@ -1,0 +1,9 @@
+ID,rollNumber,firstName,lastName,email,phone,dateOfBirth,admissionYear,currentSemester,cgpa,department_code,isActive
+aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa,CS2023001,Yogesh,Kumar,yogesh@techuniv.edu,9876500001,2002-05-10,2023,5,8.75,CS,true
+bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb,CS2023002,Rahul,Sharma,rahul@techuniv.edu,9876500002,2002-08-15,2023,5,8.20,CS,true
+cccccccc-cccc-cccc-cccc-cccccccccccc,CS2024001,Priya,Patel,priya.student@techuniv.edu,9876500003,2003-01-20,2024,3,9.10,CS,true
+dddddddd-dddd-dddd-dddd-dddddddddddd,ECE2023001,Amit,Singh,amit.student@techuniv.edu,9876500004,2002-04-18,2023,5,7.95,ECE,true
+eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee,ECE2024001,Neha,Verma,neha.student@techuniv.edu,9876500005,2003-07-25,2024,3,8.85,ECE,true
+ffffffff-ffff-ffff-ffff-ffffffffffff,ECE2025001,Rohit,Kumar,rohit.student@techuniv.edu,9876500006,2004-02-12,2025,1,8.00,ECE,true
+99999999-9999-9999-9999-999999999999,ME2023001,Karan,Patel,karan.student@techuniv.edu,9876500007,2002-11-08,2023,5,7.80,ME,true
+88888888-8888-8888-8888-888888888888,ME2024001,Anjali,Reddy,anjali.student@techuniv.edu,9876500008,2003-09-05,2024,3,8.65,ME,true

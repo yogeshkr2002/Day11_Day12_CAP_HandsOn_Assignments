@@ -1,0 +1,13 @@
+student_ID,course_code,enrollmentDate,status,grade,gradePoints,attendancePercent
+aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa,CS301,2025-01-10,Enrolled,,0,92
+bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb,CS301,2025-01-10,Enrolled,,0,88
+cccccccc-cccc-cccc-cccc-cccccccccccc,CS201,2025-01-10,Enrolled,,0,90
+dddddddd-dddd-dddd-dddd-dddddddddddd,ECE301,2025-01-10,Enrolled,,0,85
+eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee,ECE101,2025-01-10,Enrolled,,0,91
+ffffffff-ffff-ffff-ffff-ffffffffffff,ECE101,2025-01-10,Enrolled,,0,87
+99999999-9999-9999-9999-999999999999,ME201,2025-01-10,Enrolled,,0,89
+88888888-8888-8888-8888-888888888888,ME201,2025-01-10,Enrolled,,0,93
+aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa,CS201,2024-08-01,Completed,A,9.5,95
+bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb,CS201,2024-08-01,Completed,B,8.5,89
+dddddddd-dddd-dddd-dddd-dddddddddddd,ECE101,2024-08-01,Completed,A,9.2,94
+99999999-9999-9999-9999-999999999999,CS101,2024-08-01,Completed,B,8.0,86
