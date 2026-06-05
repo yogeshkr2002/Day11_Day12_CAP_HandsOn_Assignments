@@ -78,3 +78,25 @@ GET http://localhost:4004/odata/v4/catalog/Books?$select=title&$expand=author($s
 
 ### Filter using association
 GET http://localhost:4004/odata/v4/catalog/Books?$filter=author/name eq 'J.K. Rowling'
+
+###=============================================
+### Cheapest books first
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=price
+
+### Most expensive books first
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=price desc
+
+### Highest rated books first
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=rating desc
+
+### Alphabetical by title
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=title
+
+### Genre then title
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=genre,title
+
+### Newest orders then highest price
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=orderDate desc,price desc
+
+### Genre A-Z, then price high-low
+GET http://localhost:4004/odata/v4/catalog/Books?$orderby=genre asc,price desc
