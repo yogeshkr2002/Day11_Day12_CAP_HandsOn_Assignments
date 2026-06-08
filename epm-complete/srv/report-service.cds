@@ -2,6 +2,11 @@ using { com.epm as db } from '../db/views';
 
 service ReportService @(path:'/reports') {
 
+    action PingHealth() returns {
+        status  : String(20);
+        message : String(100);
+    };
+
     @readonly
     entity ProductCatalog
         as projection on db.ProductCatalog;

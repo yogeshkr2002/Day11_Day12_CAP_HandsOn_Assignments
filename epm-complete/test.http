@@ -173,3 +173,11 @@ Content-Type: application/json
 {
   "status": "Confirmed"
 }
+
+### =====================================================================
+
+### Test Report Service - PingHealth Action
+POST http://localhost:4004/reports/PingHealth
+Content-Type: application/json
+
+{}
