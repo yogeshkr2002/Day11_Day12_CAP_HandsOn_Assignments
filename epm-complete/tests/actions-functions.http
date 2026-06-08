@@ -1,0 +1,103 @@
+@base = http://localhost:4004/orders
+
+### ═══════════════════════════════════════
+### SETUP: Create test data
+### ═══════════════════════════════════════
+
+GET {{base}}/Orders
+### Create a customer
+POST {{base}}/Customers
+Content-Type: application/json
+
+{
+  "name": "Test Customer",
+  "email": "test@example.com",
+  "city": "Mumbai",
+  "creditLimit": 500000
+}
+
+### Create an order (use customer ID from above)
+POST {{base}}/Orders
+Content-Type: application/json
+
+{
+  "orderNumber": "SO-TEST-001",
+  "customer_ID": "PASTE-CUSTOMER-ID",
+  "orderDate": "2026-06-02",
+  "grossAmount": 1500.00,
+  "netAmount": 1271.19,
+  "taxAmount": 228.81,
+  "status": "New"
+}
+
+
+### ═══════════════════════════════════════
+### BOUND ACTIONS (on specific orders)
+### ═══════════════════════════════════════
+
+### Confirm the order
+POST {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.confirm
+Content-Type: application/json
+
+{}
+
+### Try to confirm again (should fail — already confirmed)
+POST {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.confirm
+Content-Type: application/json
+
+{}
+
+### Ship the order
+POST {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.ship
+Content-Type: application/json
+
+{
+  "trackingNumber": "TRK-2026-001",
+  "carrier": "BlueDart"
+}
+
+### Deliver the order
+POST {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.deliver
+Content-Type: application/json
+
+{}
+
+### Try to cancel a delivered order (should fail)
+POST {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.cancel
+Content-Type: application/json
+
+{
+  "reason": "Changed my mind"
+}
+
+
+### ═══════════════════════════════════════
+### BOUND FUNCTIONS (read-only, on specific orders)
+### ═══════════════════════════════════════
+
+### Get order total (calculated)
+GET {{base}}/Orders(da652667-2d1e-4db1-ae1b-8a3fe2f9bbfa)/OrderService.getTotal()
+
+
+### ═══════════════════════════════════════
+### UNBOUND ACTIONS (service-level)
+### ═══════════════════════════════════════
+
+### Bulk confirm multiple orders
+POST {{base}}/bulkConfirm
+Content-Type: application/json
+
+{
+  "orderIds": ["order-uuid-1", "order-uuid-2", "order-uuid-3"]
+}
+
+
+### ═══════════════════════════════════════
+### UNBOUND FUNCTIONS (service-level, GET request!)
+### ═══════════════════════════════════════
+
+### Get order statistics for June 2026
+GET {{base}}/getOrderStats(year=2026,month=6)
+
+### Get top 3 customers by spending
+GET {{base}}/getTopCustomers(limit=3)
