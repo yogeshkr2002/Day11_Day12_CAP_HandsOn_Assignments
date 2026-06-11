@@ -1,0 +1,6 @@
+ID,supplierName,contactPerson,email,phone,city,rating,isActive,createdAt,createdBy,modifiedAt,modifiedBy
+14871790-93ab-4ea1-b119-67b536c8e32d,supplierName-14871790,contactPerson-14871790,email-14871790,phone-14871790,city-14871790,3.8,true,2008-07-09T00:00:00.000Z,createdBy.8ur5a@example.net,2006-09-02T00:00:00.000Z,modifiedBy.8ur5a@example.com
+1366986e-1a82-4250-a2d2-7fd55c7a0484,supplierName-1366986,contactPerson-1366986,email-1366986,phone-1366986,city-1366986,7.2,true,2009-11-25T00:00:00.000Z,createdBy.taru@example.net,2011-08-27T00:00:00.000Z,modifiedBy.taru@example.net
+1366987e-8e9d-48de-9a86-6191ada66c11,supplierName-1366987,contactPerson-1366987,email-1366987,phone-1366987,city-1366987,9.7,false,2001-08-14T00:00:00.000Z,createdBy.tarv@example.com,2021-12-16T00:00:00.000Z,modifiedBy.tarv@example.com
+13669889-9247-4ea6-be85-e215c66b87c0,supplierName-1366988,contactPerson-1366988,email-1366988,phone-1366988,city-1366988,6.5,true,2012-08-16T00:00:00.000Z,createdBy.tarw@example.org,2014-09-29T00:00:00.000Z,modifiedBy.tarw@example.org
+1366989e-442e-4b99-88a4-64cbecfd1005,supplierName-1366989,contactPerson-1366989,email-1366989,phone-1366989,city-1366989,1.2,false,2000-11-24T00:00:00.000Z,createdBy.tarx@example.com,2014-07-02T00:00:00.000Z,modifiedBy.tarx@example.net

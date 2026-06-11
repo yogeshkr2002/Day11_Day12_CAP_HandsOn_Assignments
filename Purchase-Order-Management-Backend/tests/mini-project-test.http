@@ -1,0 +1,74 @@
+@base = http://localhost:4004/procurement
+
+### ═══════ SETUP ═══════
+GET {{base}}/Suppliers
+
+### Create supplier
+POST {{base}}/Suppliers
+Content-Type: application/json
+
+{ "supplierName": "Global Parts Ltd", "contactPerson": "John Smith",
+  "email": "john@globalparts.com", "phone": "+44-20-1234", "city": "London" }
+
+### Create product
+POST {{base}}/Products
+Content-Type: application/json
+
+{ "productName": "Widget Pro", "description": "Premium widget",
+  "unitPrice": 25.00, "stock": 5, "minStock": 20, "unit": "EA",
+  "currency_code": "USD", "supplier_ID": "4d3797a2-1c5b-4a69-b5e0-86e78a9d0d6b" }
+
+### ═══════ PO WORKFLOW ═══════
+
+### Create PO (auto-generates PO number!)
+POST {{base}}/PurchaseOrders
+Content-Type: application/json
+
+{ "supplier_ID": "4d3797a2-1c5b-4a69-b5e0-86e78a9d0d6b", "requiredDate": "2026-06-15",
+  "priority": "High", "currency_code": "USD",
+  "notes": "Urgent restock needed" }
+
+### Add item
+POST {{base}}/PurchaseOrderItems
+Content-Type: application/json
+
+{ "po_ID": "a52f55f5-8846-45bb-a25e-b7f79178bb33", "product_ID": "21678227-d01f-4a65-9f54-39b06f207fae",
+  "quantity": 100, "unitPrice": 18.50, "currency_code": "USD" }
+
+### Get summary before submitting
+GET {{base}}/PurchaseOrders(a52f55f5-8846-45bb-a25e-b7f79178bb33)/ProcurementService.getSummary()
+
+### Submit
+POST {{base}}/PurchaseOrders(a52f55f5-8846-45bb-a25e-b7f79178bb33)/ProcurementService.submit
+Content-Type: application/json
+
+{}
+
+### Approve
+POST {{base}}/PurchaseOrders(a52f55f5-8846-45bb-a25e-b7f79178bb33)/ProcurementService.approve
+Content-Type: application/json
+
+{ "comment": "Good price, approved" }
+
+### Mark as ordered
+POST {{base}}/PurchaseOrders(a52f55f5-8846-45bb-a25e-b7f79178bb33)/ProcurementService.markOrdered
+Content-Type: application/json
+
+{ "referenceNumber": "SUP-REF-2026-001" }
+
+### Receive goods (stock goes from 5 to 105!)
+POST {{base}}/PurchaseOrders(a52f55f5-8846-45bb-a25e-b7f79178bb33)/ProcurementService.receiveGoods
+Content-Type: application/json
+
+{ "notes": "All items in good condition" }
+
+### ═══════ VERIFY ═══════
+
+### Check product stock
+GET {{base}}/Products(21678227-d01f-4a65-9f54-39b06f207fae)?$select=productName,stock
+
+### Dashboard
+GET {{base}}/getDashboard()
+
+### Low stock check
+GET {{base}}/getLowStockProducts(threshold=5)
